@@ -1,0 +1,44 @@
+{
+    "name": "nzovopay/noderpay-laravel",
+    "description": "Laravel service provider, facade, and Artisan tooling for the NoderPay PHP SDK",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["noderpay", "payments", "bitcoin", "invoices", "laravel"],
+    "homepage": "https://docs.noderpay.com/sdk/laravel",
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "nzovopay/noderpay-php": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "NoderPay\\Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NoderPay\\Laravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NoderPay\\Laravel\\NoderPayServiceProvider"
+            ],
+            "aliases": {
+                "NoderPay": "NoderPay\\Laravel\\Facades\\NoderPay"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
